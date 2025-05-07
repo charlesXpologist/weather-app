@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* NEW: Better sizing calculations */
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh; /* Changed from height for better mobile */
+    background-color: rgba(9, 150, 77, 0.751);
+    display: flex;
+    flex-direction: column; /* NEW: Stack children vertically */
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* NEW: Prevents edge crowding */
+}
+
+.weather_container {
+    color: rgb(10, 9, 9);
+    width: 100%;
+    max-width: 500px; /* NEW: Prevents over-stretching on large screens */
+}
+
+.temp {
+    font-size: 4rem; 
+    text-align: center; /* NEW: Better centering */
+}
+
+.time_location {
+    font-size: 1rem;
+    text-align: center;
+    margin: 10px 0; /* NEW: Better spacing */
+}
+
+.condition {
+    margin: 0.5rem 0.2rem; 
+    text-align: center; 
+}
+
+/* Search Form */
+nav {
+    width: 100%;
+    max-width: 500px; /* Matches weather_container */
+    margin-top: 20px; /* NEW: Better spacing */
+}
+
+.search_area {
+    padding: 1rem 0;
+    outline: none;
+    border: none;
+    color: black;
+    background-color: transparent;
+    margin-left: 2rem;
+    font-size: 1.1rem;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    width: 70%; /* Adjusted from 90% for button space */
+}
+
+nav form {
+    display: flex; /* NEW: Better form layout */
+    align-items: center;
+}
+
+nav form button {
+    padding: 0.3rem 0.8rem; /* Better button proportions */
+    background-color: white;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-size: 1.1rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px; /* NEW: Softened edges */
+    transition: all 0.3s ease; /* NEW: Smooth hover effect */
+}
+
+nav form button:hover {
+    background-color: #f0f0f0; /* NEW: Interactive feedback */
+    transform: translateY(-1px);
+}
+
+/* Hourly Forecast */
+.hourly-forecast {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(5px); /* NEW: Frosted glass effect */
+}
+
+.hourly-forecast h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.hourly-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 10px 5px;
+    scrollbar-width: thin; /* NEW: Cleaner scrollbar */
+}
+
+.hour {
+    min-width: 60px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 8px;
+    border-radius: 8px;
+    flex-shrink: 0; /* NEW: Prevents squishing */
+}
+
+.hour img {
+    width: 30px;
+    height: 30px;
+    margin: 5px 0;
+}
+
+/* Air Quality */
+.aqi {
+    font-size: 0.9em;
+    display: inline-block; /* NEW: Better layout control */
+    padding: 3px 8px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.3);
+    margin-top: 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .temp {
+        font-size: 3rem;
+    }
+    .search_area {
+        width: 60%; /* More space for button on mobile */
+    }   
+}
+
+/* Add to your CSS */
+.geo-permission {
+    position: fixed;
+    top: 20px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
